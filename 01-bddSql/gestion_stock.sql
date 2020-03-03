@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  ven. 28 fév. 2020 à 12:53
+-- Généré le :  ven. 28 fév. 2020 à 14:02
 -- Version du serveur :  10.4.10-MariaDB
 -- Version de PHP :  7.3.12
 
@@ -31,10 +31,11 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `logs_connexions`;
 CREATE TABLE IF NOT EXISTS `logs_connexions` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `id_utilisateur` int(11) NOT NULL,
-  `date_connexion` date NOT NULL,
-  `connecte` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`)
+  `id-utilisateur` int(11) NOT NULL,
+  `date-connexion` date NOT NULL,
+  `connecte` tinyint(1) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -47,11 +48,11 @@ DROP TABLE IF EXISTS `produits`;
 CREATE TABLE IF NOT EXISTS `produits` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `code_produit` varchar(16) NOT NULL,
-  `nom` varchar(30) NOT NULL,
+  `nom` varchar(50) NOT NULL,
   `detail` text NOT NULL,
-  `categorie` varchar(30) NOT NULL,
-  `quantite` int(11) DEFAULT NULL,
-  `prix_achat` decimal(10,0) DEFAULT NULL,
+  `categorie` varchar(8) NOT NULL,
+  `quantite` int(11) NOT NULL,
+  `prix_achat` int(11) NOT NULL,
   `date_expiration` date NOT NULL,
   `actif` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`)
@@ -66,14 +67,26 @@ CREATE TABLE IF NOT EXISTS `produits` (
 DROP TABLE IF EXISTS `utilisateurs`;
 CREATE TABLE IF NOT EXISTS `utilisateurs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nom` varchar(30) NOT NULL,
-  `prenom` varchar(30) NOT NULL,
+  `nom` varchar(50) NOT NULL,
+  `prenom` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `mot_de_passe` varchar(50) NOT NULL,
-  `type` enum('administrateur','client') NOT NULL,
+  `mot_de_passe` varchar(255) NOT NULL,
+  `type` varchar(50) NOT NULL,
   `actif` tinyint(1) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`),
+  KEY `id_2` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contraintes pour les tables déchargées
+--
+
+--
+-- Contraintes pour la table `logs_connexions`
+--
+ALTER TABLE `logs_connexions`
+  ADD CONSTRAINT `logs_connexions_ibfk_1` FOREIGN KEY (`id-utilisateur`) REFERENCES `utilisateurs` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
