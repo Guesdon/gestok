@@ -1,1 +1,2 @@
-<?php echo'Bienvenue sur mon projet';
+<?php 
+    echo'Bienvenue sur mon projet';
