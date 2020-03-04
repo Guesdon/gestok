@@ -1,4 +1,4 @@
-        <footer class="bg-dark navbar-dark fixed-bottom">
+        <footer class="bg-dark navbar-dark">
             <div class="container">
                 <div class="row text-center">
                     <div class="col-lg-2 offset-lg-2">

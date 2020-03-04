@@ -1,0 +1,19 @@
+body{
+    height: 100%;
+    background-color:gray;
+}
+
+body main{
+    background-color: hotpink;
+    min-height: 81.2vh;
+}
+
+body main aside{
+    background-color:red;
+    min-height: 100%;
+}
+
+body main section{
+    background-color: green;
+    min-height: 100%;
+}
