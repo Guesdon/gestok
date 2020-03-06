@@ -18,8 +18,13 @@
     //     ini_set("display_errors", 1);
     // } 
 
+    // Sécurisation des vars reçus
+    $arrayVar = Controllers::secureArray($_REQUEST);
+    var_dump($arrayVar);
+    // var_dump($arrayVar);
+
     //appel header general
 
     require_once("header.php");
-    require_once("body.php");
+    require_once("main.php");
     require_once("footer.php");

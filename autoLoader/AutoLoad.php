@@ -6,28 +6,21 @@
    * @return none
    * Charge par require_once le bon script php
    */
-  
     function app_autoloader($class) {
-        $PathFind = false;
+        $pathFind = false;
         for ($i = 1; $i <= 5; $i++) {
-            var_dump($i);
             if ($i <= 1) {
-                $Path = "";
+                $path = "";
             } else {
-                $Path = $Path . "../";
+                $path = $path . "../";
             }
-            // Classes
-            if (file_exists($Path . "classes/$class.php")) {
-                require_once($Path . "classes/$class.php");
-                $PathFind = true;
-            }
-            // Controllers
-            if (file_exists($Path . "controllers/$class.php")) {
-                require_once($Path . "controllers/$class.php");
-                $PathFind = true;
+        // Controllers
+            if (file_exists($path . "controllers/$class.php")) {
+                require_once($path . "controllers/$class.php");
+                $pathFind = true;
             }
         }
-        if ($PathFind = false) {
+        if ($pathFind = false) {
             $lastError = error_get_last();
             trigger_error("Autoloader message => Class not found : $class - needed in " . $lastError["file"] . "(" . $lastError["line"] . ")", E_USER_ERROR);
         }

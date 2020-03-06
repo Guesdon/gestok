@@ -1,8 +1,8 @@
-.saturate
+.invert
 {
-    filter: saturate(500%);
-    -webkit-filter: saturate(500%);
-    -moz-filter: saturate(500%);
-    -o-filter: saturate(500%);
-    -ms-filter: saturate(500%);
+        filter: invert(1);
+        -webkit-filter: invert(1);
+        -moz-filter: invert(1);
+        -o-filter: invert(1);
+        -ms-filter: invert(1);
 }

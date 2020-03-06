@@ -22,7 +22,7 @@
         <header>
             <nav class="navbar navbar-dark bg-dark navbar-expand">
 
-                <a class="navbar-brand saturate" type="">
+                <a class="navbar-brand invert" type="">
                     <img src="/component/img/Icone.png" width="30" height="30" class="d-inline-block align-top" alt="">
                 </a>
             
@@ -40,6 +40,12 @@
                         </li>
                     </ul>
                 </div>
+
+                <span class="text-white">
+                    <?php 
+                        echo (Controllers::writingHello(Controllers::secureArray($_REQUEST)["maVar"]));
+                    ?>
+                </span>
 
                 <ul class="navbar-nav">
                     <li class="nav-item">
