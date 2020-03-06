@@ -12,15 +12,34 @@
         <!-- datatable -->
         <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.css"/>  -->
 
+        <!-- fontawesome -->
+        <script src="https://kit.fontawesome.com/25c9006a57.js"></script>
+
         <link rel="stylesheet" href="/component/css/style.css">
     </head>
 
     <body>
         <header>
-            <nav class="navbar navbar-dark bg-dark">
-                <button class="navbar-toggler" type="button">
+            <nav class="navbar navbar-dark bg-dark navbar-expand">
+
+                <a class="navbar-brand saturate" type="">
+                    <img src="/component/img/Icone.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                </a>
+            
+                <!-- <button class="navbar-toggler" type="button">
                     <i class="fas fa-boxes"></i>
-                </button>
+                </button> -->
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Features</a>
+                        </li>
+                    </ul>
+                </div>
 
                 <ul class="navbar-nav">
                     <li class="nav-item">

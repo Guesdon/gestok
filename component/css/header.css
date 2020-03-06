@@ -1,0 +1,8 @@
+.saturate
+{
+    filter: saturate(500%);
+    -webkit-filter: saturate(500%);
+    -moz-filter: saturate(500%);
+    -o-filter: saturate(500%);
+    -ms-filter: saturate(500%);
+}
