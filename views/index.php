@@ -12,11 +12,11 @@
     //echo EMAIL_SUPPORT_TECH;
 
     // Test
-    if (MODE_TEST==1) {
-        echo "Test activé <br>";
-        error_reporting(E_ALL);
-        ini_set("display_errors", 1);
-    } 
+    // if (MODE_TEST==1) {
+    //     echo "Test activé <br>";
+    //     error_reporting(E_ALL);
+    //     ini_set("display_errors", 1);
+    // } 
 
     // Sécurisation des vars reçus
     $arrayVar = Controllers::secureArray($_REQUEST);
