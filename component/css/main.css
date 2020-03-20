@@ -1,0 +1,15 @@
+body main{
+    min-height: 100%;
+}
+
+.main_component{
+    min-height: 81.2vh;
+}
+
+#product-list{
+    background-color: green;
+}
+
+#profile{
+    max-width: 33%;
+}

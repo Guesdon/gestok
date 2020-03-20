@@ -24,7 +24,7 @@
 
     $param = "?ctrl=getUsers";
     $resultGetCurl = Controllers::getCurlRest($param);
-    var_dump($resultGetCurl);
+    //var_dump($resultGetCurl);
 
     //appel header general
 

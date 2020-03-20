@@ -3,12 +3,12 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="/component/img/favicon/favicon.png" type="image/x-icon">
+        <link rel="shortcut icon" href="/component/img/favicon/favicon.ico" type="image/x-icon">
         
         <title>GestOK</title>
 
         <!-- bootstrap -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <!-- datatable -->
         <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.css"/>  -->
 
@@ -41,11 +41,11 @@
                     </ul>
                 </div>
 
-                <span class="text-white">
+                <!-- <span class="text-white"> -->
                     <?php 
-                        echo (Controllers::writingHello(Controllers::secureArray($_REQUEST)["maVar"]));
+                        // echo (Controllers::writingHello(Controllers::secureArray($_REQUEST)["maVar"]));
                     ?>
-                </span>
+                <!-- </span> -->
 
                 <ul class="navbar-nav">
                     <li class="nav-item">
