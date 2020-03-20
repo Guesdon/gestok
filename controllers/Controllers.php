@@ -36,7 +36,7 @@ class Controllers {
     }
 
     public static function writingHello($maVar) {   
-        $returnText= "Bonjour" . $maVar . "<br";
+        $returnText= "Bonjour " . $maVar . "<br>";
 
     return $returnText;
     }
