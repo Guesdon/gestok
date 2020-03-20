@@ -22,6 +22,10 @@
     $arrayVar = Controllers::secureArray($_REQUEST);
     //var_dump($arrayVar);
 
+    $param = "?ctrl=getUsers";
+    $resultGetCurl = Controllers::getCurlRest($param);
+    var_dump($resultGetCurl);
+
     //appel header general
 
     require_once("header.php");

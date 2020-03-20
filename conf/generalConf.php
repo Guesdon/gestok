@@ -42,6 +42,8 @@
     // Nom des cookies
         define('COOKIE_RESTER_CONNECTE', "b1ub1a01iv3");
         define('COOKIE_HTTPS_ONLY', FALSE);
+    // Url api curl
+        define('URL_CURL_API_REST', HTTP_PATH_HOST_PRINCIPAL.'api/rest/');
 
     // #############################################################################
     // EXT CONFIGURATION ###########################################################
@@ -80,6 +82,8 @@
     // Nom des cookies
         define('COOKIE_RESTER_CONNECTE', "yaya");
         define('COOKIE_HTTPS_ONLY', FALSE);
+    // Url api curl
+        define('URL_CURL_API_REST', HTTP_PATH_HOST_PRINCIPAL.'api/rest/');
 
     // #############################################################################
     // SI ERREUR ###################################################################
