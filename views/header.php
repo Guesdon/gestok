@@ -47,10 +47,10 @@
                     ?>
                 <!-- </span> -->
 
-                <ul class="navbar-nav">
+                <!-- <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" href="#">Connexion</a>
                     </li>
-                </ul>
+                </ul> -->
             </nav>
         </header>

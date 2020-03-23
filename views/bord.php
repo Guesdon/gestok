@@ -23,11 +23,13 @@
 
     <div class="container-fluid">
         <div class="row justify-content-center">   
-            <div class="col-12">
+            <div class="col-12 row">
                 <img src="/component/img/contextMenu/profile.png" alt="profile" id="profile">
-                <p>type utilisateur</p>
-                <p>Profile</p>
-                <a href="#">Déconnexion</a>
+                <div>
+                    <p>type utilisateur</p>
+                    <p>Profile</p>
+                    <a href="#">Déconnexion</a>
+                </div>
             </div>
             <h6 class="text-left col-12">TABLEAU DE BORD</h6>
 

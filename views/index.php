@@ -18,12 +18,27 @@
     //     ini_set("display_errors", 1);
     // } 
 
+        
+
     // Sécurisation des vars reçus
     $arrayVar = Controllers::secureArray($_REQUEST);
     //var_dump($arrayVar);
 
     $param = "?ctrl=getUsers";
     $resultGetCurl = Controllers::getCurlRest($param);
+    $resultGetCurl =json_decode($resultGetCurl);
+
+    if ($resultGetCurl->status=="failed") {
+        die ("Une erreur est survenue ! Veuillez contacter le support technique!");
+    } elseif($resultGetCurl->status=="success") {
+        echo "<pre>";
+        var_dump($resultGetCurl->result);
+        echo "</pre>";
+        //echo $resultGetCurl->result->email;
+    } else {
+        die("Erreur critique");
+    }
+    //echo $resultGetCurl->status;
     //var_dump($resultGetCurl);
 
     //appel header general

@@ -15,8 +15,8 @@
                 $path = $path . "../";
             }
         // Controllers
-            if (file_exists($path . "controllers/$class.php")) {
-                require_once($path . "controllers/$class.php");
+            if (file_exists($path . "controller/$class.php")) {
+                require_once($path . "controller/$class.php");
                 $pathFind = true;
             }
         }
