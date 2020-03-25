@@ -163,4 +163,42 @@ class Controllers {
         return $result;
     }
 
+    public static function verifConnexionUser(){
+
+        $result = false;
+        
+        //unset($_SESSION['user']);
+        
+        var_dump($_SESSION);
+
+        if (isset($_SESSION['user']) && !(empty($_SESSION['user']))){
+
+            $result=true;
+        }
+        //(isset($_SESSION['user']) && !empty($_SESSION['user'])) ? true : false;
+        return $result;
+    }
+
+    public static function verifUserIfExist(){
+        $param = "?ctrl=getUsers";
+        $resultGetCurl = Controllers::getCurlRest($param);
+        $resultGetCurl =json_decode($resultGetCurl);
+
+        if ($resultGetCurl->status=="failed") {
+            die ("Une erreur est survenue ! Veuillez contacter le support technique!");
+        } elseif($resultGetCurl->status=="success") {
+            foreach($resultGetCurl->result as $user){
+
+                if(($_POST['email']==$user->email)&&($_POST['mdp']==$user->mot_de_passe)){
+                    $_SESSION['idUser']=$user->id;
+                    $_SESSION['nameUser']=$user->nom;
+                    $_SESSION['lastNameUser']=$user->prenom;
+                    $_SESSION['emailUser']=$user->email;
+                    $_SESSION['typeUser']=$user->type;
+                }
+            }
+        } else {
+            die("Erreur critique");
+        }
+    }
 }
