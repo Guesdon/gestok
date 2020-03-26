@@ -9,9 +9,8 @@
 
         <!-- bootstrap -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-        <!-- datatable -->
-        <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.css"/>  -->
-
+        <!-- dataTables -->
+        <link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
         <!-- fontawesome -->
         <script src="https://kit.fontawesome.com/25c9006a57.js"></script>
 

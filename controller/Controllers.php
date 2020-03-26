@@ -165,18 +165,12 @@ class Controllers {
 
     public static function verifConnexionUser(){
 
-        $result = false;
-        
-        //unset($_SESSION['user']);
-        
-        var_dump($_SESSION);
+        if (isset($_POST['email']) && !(empty($_POST['email']))){
 
-        if (isset($_SESSION['user']) && !(empty($_SESSION['user']))){
-
-            $result=true;
+            return true;
         }
         //(isset($_SESSION['user']) && !empty($_SESSION['user'])) ? true : false;
-        return $result;
+        return false;
     }
 
     public static function verifUserIfExist(){
@@ -195,6 +189,7 @@ class Controllers {
                     $_SESSION['lastNameUser']=$user->prenom;
                     $_SESSION['emailUser']=$user->email;
                     $_SESSION['typeUser']=$user->type;
+                    break;
                 }
             }
         } else {

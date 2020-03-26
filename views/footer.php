@@ -43,10 +43,14 @@
                 </div>
             </div>
         </footer>
-        <!--datatable
-        <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.js"></script>-->
         <!-- jQuery -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+        <script>
+            $(document).ready( function () {
+                $('#products').DataTable();
+            } );
+        </script>
     </body>
 </html>

@@ -18,27 +18,20 @@
     //     ini_set("display_errors", 1);
     // } 
 
-        
 
     // Sécurisation des vars reçus
     $arrayVar = Controllers::secureArray($_REQUEST);
 
-    unset($_SESSION['user']);
-    unset($_SESSION['action']);
+    $tentativeConnexion = Controllers::verifConnexionUser();
 
-    if (isset($_SESSION['action']) && !empty($_SESSION['action'])){
-        if($_SESSION['action']=="auth"){
-            //compare la saisie du formulaire
-            Controllers::verifUserIfExist();
-
-            //verifie si l'utilisateur a un id
-            $sessionExit = Controllers::verifConnexionUser();
-        }else{
-            $sessionExit=false;
-        }
-    }else{
-        $sessionExit=false;
+    if($tentativeConnexion){
+        Controllers::verifUserIfExist();
+        unset($_POST['connect']);
+        unset($_POST['email']);
+        unset($_POST['mdp']);
     }
+
+
     //var_dump($arrayVar);
 
     // $param = "?ctrl=getUsers";

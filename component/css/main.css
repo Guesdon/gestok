@@ -7,7 +7,12 @@ body main{
 }
 
 #product-list{
-    background-color: green;
+    margin-top: 20px;
+}
+
+.moddel{
+    display: flex;
+    justify-content: space-around;
 }
 
 #profile{
