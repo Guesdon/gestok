@@ -21,11 +21,9 @@
 
     // Sécurisation des vars reçus
     $arrayVar = Controllers::secureArray($_REQUEST);
-
-    $tentativeConnexion = Controllers::verifConnexionUser();
-
-    if($tentativeConnexion){
-        Controllers::verifUserIfExist();
+    $connexionOK=true;
+    if(Controllers::verifConnexionUser()){
+        $connexionOK=Controllers::verifUserIfExist();
         unset($_POST['connect']);
         unset($_POST['email']);
         unset($_POST['mdp']);
@@ -54,5 +52,6 @@
     //appel header general
 
     require_once("header.php");
+    //require_once("error404.php");
     require_once("main.php");
     require_once("footer.php");

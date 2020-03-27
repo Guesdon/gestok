@@ -1,3 +1,19 @@
+<?php
+    $param = "?ctrl=getProducts";
+    $resultGetCurl = Controllers::getCurlRest($param);
+    $resultGetCurl =json_decode($resultGetCurl);
+    $productslist="";
+    foreach ($resultGetCurl->result as $product){
+        $productslist =$productslist .'<tr><td>'.$product->code_produit.'</td>'.
+                        '<td>'.$product->nom.'</td>'.
+                        '<td>'.$product->categorie.'</td>'.
+                        '<td>'.$product->quantite.'</td>'.
+                        '<td>'.$product->prix_achat.'</td>'.
+                        '<td>'.$product->date_expiration.'</td>'.
+                        '<td class="text-center moddel"><div><i class="fas fa-pencil-alt text-warning"></i></div><div><i class="fas fa-times text-danger"></i></div></td></tr>';
+    }
+?>
+
 <section class="col-xs-12 col-sm-8 col-md-9 col-lg-10 main_component" id="product-list">
     <div>
         <div>
@@ -17,15 +33,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>0</td>
-                        <td>Test</td>
-                        <td>Test</td>
-                        <td>42</td>
-                        <td>42€</td>
-                        <td>01/01/2020</td>
-                        <td class="text-center moddel"><div><i class="fas fa-pencil-alt text-warning"></i></div><div><i class="fas fa-times text-danger"></i></div></td>
-                    </tr>
+                    <?php
+                        echo $productslist;
+                    ?>
                 </tbody>
                 <tfoot>
                     <tr>

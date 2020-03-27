@@ -20,4 +20,21 @@ class GetModel extends Models {
         // print_r($query);
         return $query;
     }
+
+    /**
+     * Model for getFirstPageBook Controler
+     *
+     * @return object
+     */
+    public static function getProductsModel() {
+        $dbConnect = Models::bddConnect();
+        $query = $dbConnect->prepare(
+                "SELECT * "
+                . "FROM produits"
+                . " WHERE ("
+                . "actif=1)"
+                . "ORDER BY id ASC ");
+        // print_r($query);
+        return $query;
+    }
 }

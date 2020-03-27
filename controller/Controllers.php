@@ -189,11 +189,17 @@ class Controllers {
                     $_SESSION['lastNameUser']=$user->prenom;
                     $_SESSION['emailUser']=$user->email;
                     $_SESSION['typeUser']=$user->type;
-                    break;
+                    $_SESSION['curl']=$resultGetCurl->result;
                 }
             }
         } else {
             die("Erreur critique");
+        }
+
+        if(!empty($_SESSION['idUser'])&&isset($_SESSION['idUser'])){
+            return true;
+        }else{
+            return false;
         }
     }
 }

@@ -39,7 +39,31 @@ class GetController extends Controllers {
         $param = array();
         $this->tryCatchError($query, $param, $ctrl);
         // Result
-         $result = $query->fetchAll(PDO::FETCH_ASSOC);
+        $result = $query->fetchAll(PDO::FETCH_ASSOC);
+        // No result
+        if ($result == false) {
+            $resultFinal = array('controller' => $ctrl, 'status' => 'failed', 'result' => 'No data found');
+        // Success
+        } else {
+            $resultFinal = array('controller' => $ctrl, 'status' => 'success', 'result' => $result);
+        }
+        $this->responseResult($resultFinal);
+    }
+
+    /**
+     * Renvoie la liste de tous les produits
+     *
+     * @param string $products => name controleur
+     * @return json => liste utilisateur
+     */
+    private function getProducts($ctrl) {
+        // Call to model
+        $query = GetModel::getProductsModel();
+        // Execute query
+        $param = array();
+        $this->tryCatchError($query, $param, $ctrl);
+        // Result
+        $result = $query->fetchAll(PDO::FETCH_ASSOC);
         // No result
         if ($result == false) {
             $resultFinal = array('controller' => $ctrl, 'status' => 'failed', 'result' => 'No data found');

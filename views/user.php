@@ -2,6 +2,7 @@
     if(isset($_POST['deconnect'])){
         session_destroy();
         header('Location: index.php');
+        exit;
 	}
 ?>
 <div class="row justify-content-center">   
